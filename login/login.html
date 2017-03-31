@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html >
+  <head>
+  <?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "","soad");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+/* $sql = "SELECT * FROM login";
+ $result = mysqli_query($link, $sql);
+ echo "<table>";
+  while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['uname'] . "</td>";
+                echo "<td>" . $row['pword'] . "</td>";
+                echo "<td>" . $row['type'] . "</td>";
+            echo "</tr>";
+        }
+ echo "</table>";
+ */
+$user=$_POST["username"];
+$pass=$_POST["password"];
+/*echo $user."<br>";
+echo $pass;
+*/
+$q="SELECT * FROM login where uname='".$user."'";
+$result=mysqli_query($link, $q);
+
+
+if(mysqli_num_rows($result)>0)
+{
+header('Location: html/library.htm');
+ 
+}
+else
+{
+	echo "INVALID USERNAME OR PASSWORD";
+}	
+
+?>
+  
+  
+  
+  
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+    
+    <link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+ 
+     <script src="prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+  <form class="login">
+    <p class="title">Log in</p>
+    <input type="text" placeholder="Username" autofocus/>
+    <i class="fa fa-user"></i>
+    <input type="password" placeholder="Password" />
+    <i class="fa fa-key"></i>
+    <a href="#">Forgot your password?</a>
+    <button>
+      <i class="spinner"></i>
+      <span class="state">Log in</span>
+    </button>
+  </form>
+  </p>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

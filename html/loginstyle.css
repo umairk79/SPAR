@@ -1,0 +1,41 @@
+body{
+    background-image:url("http://www.buildyourfirm.com/images/loginbyf.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    text-align:center;
+    }
+#title{
+    color:#aabbff;
+    margin-top:200px;
+    }
+.loginform{
+    font-size:24px;
+    font-weight:bold;
+          }
+          
+#fp{
+    postion:relative;
+    margin-left:300px;
+    }
+#lbtn{
+    background-color:#a0bbff;
+    width:100px;
+    margin-left:100px;
+    text-decoration:underline;
+     }
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
